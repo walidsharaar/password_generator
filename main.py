@@ -12,25 +12,29 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 # User password
 
-password = ""
-
+password_list = []
 
 
 # storing temporary letter
 for letter in  range(0,nr_letters+1):
-    password += random.choice(letters)
+    password_list.append(random.choice(letters))
 
 # storing temporary symbol
 
 for symbol in range(0,nr_symbols+1):
-    password += random.choice(symbols)
+    password_list.append(random.choice(symbols))
+
 
 # storing temporary number
 
 for number in range(0,nr_numbers+1):
-    password +=random.choice(numbers)
+    password_list.append(random.choice(numbers))
 
 #generate password randomly
+random.shuffle(password_list)
+password=""
+for text in password_list :
+    password +=text
 
 print(password)
 
