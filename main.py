@@ -10,22 +10,29 @@ nr_letters= int(input("How many letters would you like in your password?\n"))
 nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
-temp_letter =""
-for letter in  range(0,nr_letters):
-    temp_letter += random.choice(letters)
+# User password
 
-temp_symbol =""
-for symbol in range(0,nr_symbols):
-    temp_symbol += random.choice(symbols)
+password = ""
 
 
-temp_number = ""
 
-for number in range(0,nr_numbers):
-    temp_number +=random.choice(numbers)
+# storing temporary letter
+for letter in  range(0,nr_letters+1):
+    password += random.choice(letters)
 
+# storing temporary symbol
 
-password= (temp_number+temp_letter+temp_symbol)
+for symbol in range(0,nr_symbols+1):
+    password += random.choice(symbols)
+
+# storing temporary number
+
+for number in range(0,nr_numbers+1):
+    password +=random.choice(numbers)
+
+#generate password randomly
+
+print(password)
 
 
 
