@@ -1,16 +1,33 @@
-# This is a sample Python script.
+# Password genrator project
+import random
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+print("Welcome to the Python Password Generator!")
+nr_letters= int(input("How many letters would you like in your password?\n"))
+nr_symbols = int(input(f"How many symbols would you like?\n"))
+nr_numbers = int(input(f"How many numbers would you like?\n"))
+
+temp_letter =""
+for letter in  range(0,nr_letters):
+    temp_letter += random.choice(letters)
+
+temp_symbol =""
+for symbol in range(0,nr_symbols):
+    temp_symbol += random.choice(symbols)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+temp_number = ""
+
+for number in range(0,nr_numbers):
+    temp_number +=random.choice(numbers)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+password= (temp_number+temp_letter+temp_symbol)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+
+
+
